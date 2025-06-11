@@ -1,0 +1,37 @@
+[project]
+name = "liveportrait"
+version = "0.1.0"
+description = "Package for Live Portrait animation"
+license-files = ["LICENSE"]
+readme = "readme.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy==1.26.4",
+    "torch==2.3.0",
+    "torchvision==0.18.0",
+    "opencv-python==4.10.0.84",
+    "pillow>=10.2.0",
+    "pyyaml==6.0.1",
+    "scipy==1.13.1",
+    "scikit-image==0.24.0",
+    "imageio==2.34.2",
+    "tqdm==4.66.4",
+    "onnx==1.16.1",
+    "onnxruntime-gpu==1.18.0",
+    "albumentations==1.4.10",
+    "pykalman==0.9.7",
+]
+
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["liveportrait*"]
+
+[tool.setuptools.package-data]
+"liveportrait.config" = ["*.yaml", "*.yml"]
+"liveportrait.utils.resources" = ["*.pkl", "*.png"]
+"liveportrait.utils.dependencies.insightface.data.objects" = ["*.pkl"]
+"liveportrait.utils.dependencies.insightface.data.images" = ["*.jpg", "*.png"]
